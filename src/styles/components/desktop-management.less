@@ -1,0 +1,30 @@
+
+.well-desktop-management {
+	position: fixed;
+	top: 2px;
+	left: 2px;
+	// height: 35px;
+	padding: 2px;
+	display: flex;
+	flex-wrap: wrap;
+	background-color: @component-background;
+	box-shadow: @shadow-frame;
+	border-radius: @border-radius-base;
+	z-index: 9999;
+
+	.logo {
+		padding: 9px;
+		font-size: @font-size-large;
+		font-weight: 600;
+		color: @error-color;
+		filter: drop-shadow(1px 1px 1px @subsidiary-color);
+	}
+
+	.title {
+		padding: 9px;
+		font-size: @font-size-base;
+		font-weight: 600;
+		color: @text-color;
+	}
+}
+	

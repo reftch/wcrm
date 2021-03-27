@@ -1,0 +1,27 @@
+
+.well-frame-management {
+	position: fixed;
+	top: calc(50% - 200px);
+	left: 2px;
+	height: 400px;
+	padding: 5px;
+	// width: 40px;
+	display: flex;
+  flex-direction: column;
+	background-color: @component-background;
+	box-shadow: @shadow-frame;
+	border-radius: @border-radius-base;
+	z-index: 9999;
+
+	.well-btn-icon-only {
+		margin: 0;
+	}
+	
+	.title {
+		padding: 7px;
+		font-size: @font-size-base;
+		font-weight: 600;
+		color: @title-color;
+	}
+}
+	

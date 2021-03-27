@@ -1,0 +1,113 @@
+
+@padding-base           : 5px 15px 5px;
+@padding-large          : 6px 15px 6px 15px;
+@padding-small          : 1px 7px 2px;
+@font-size              : 12px;
+@font-size-large        : 14px;
+@border-radius-small:   2px;
+
+.button-size(@padding; @font-size; @border-radius) {
+  padding: @padding;
+  font-size: @font-size;
+  border-radius: @border-radius;
+}
+
+.button-color(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+  &:hover {
+    color: tint(@color, 20%);
+    background-color: tint(@background, 20%);
+    border-color: tint(@border, 20%);
+  }
+}
+
+.well-btn {
+  border: 1px solid transparent;
+  padding: 5px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  // border-radius: @border-radius;
+  line-height: @line-height-base;
+  .button-size(@padding-base; @font-size-base; @border-radius-base);
+  transition: color .2s linear, background-color .2s linear, border .2s linear, box-shadow .2s linear;
+
+  .button-color(@text-color, @component-background, @border-color-base);
+
+  &,
+  &:active,
+  &:focus {
+      outline: 0;
+  }
+
+  &:hover {
+    color: @primary-color;
+    border-color: tint(@border-color-base, 20%);
+  }
+
+  &-primary {
+    .button-color(@white, @primary-color, @border-color-base);
+  }
+
+  &-dashed {
+    border-style: dashed;
+  }
+
+  &-text{
+    .button-color(@text-color, transparent, transparent);
+    &:hover {
+      color: @primary-color;
+    }
+  }
+
+  &-success {
+    .button-color(@white, @success-color, @success-color);
+  }
+
+  &-warning {
+    .button-color(@white, @warning-color, @warning-color);
+  }
+
+  &-error {
+    .button-color(@white, @error-color, @error-color);
+  }
+
+  &-info {
+    .button-color(@white, @info-color, @info-color);
+  }
+
+  &-large {
+    .button-size(@padding-large; @font-size-large; @border-radius-base);
+  }
+
+  &-small {
+    .button-size(@padding-small; @font-size; @border-radius-small);
+  }
+
+	&-icon-only {
+		border: 1px solid transparent;
+    padding: 0;
+    // margin: 0;
+    // filter: invert();
+		background-color: inherit;
+	}
+
+	&-icon-only:hover {
+		border: 1px solid transparent;
+		background-color: rgba(@primary-color, 0.55);
+	}
+
+  &-disabled {
+    cursor: default;
+    filter: opacity(40%);
+
+    &:hover {
+      cursor: default;
+    }
+  }
+ 
+}
